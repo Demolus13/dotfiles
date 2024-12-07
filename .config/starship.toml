@@ -1,0 +1,83 @@
+format = """
+$username\
+$hostname\
+$directory\
+$git_branch\
+$git_state\
+$git_status\
+$git_metrics\
+$fill\
+$nodejs\
+$java\
+$python\
+$php\
+$rust\
+$jobs $time\
+$line_break\
+$character"""
+
+[fill]
+symbol = " "
+
+[directory]
+truncation_length = 3
+truncation_symbol = ".../"
+
+[aws]
+format = '\[🌩️ [$symbol($profile)(\($region\))(\[$duration\])]($style)\]'
+
+[c]
+format = '\[📄 [$symbol($version(-$name))]($style)\]'
+
+[cmake]
+format = '\[🛠️ [$symbol($version)]($style)\]'
+
+[cmd_duration]
+disabled = true
+
+[conda]
+format = '\[🐍 [$symbol$environment]($style)\]'
+
+[git_branch]
+format = '[]($style) [$branch ]($style)'
+style = "bold #737aa2" 
+
+[git_status]
+ahead = '⇡${count}'
+diverged = '⇕⇡${ahead_count}⇣${behind_count}'
+behind = '⇣${count}'
+format = '([\[$all_status$ahead_behind\] ]($style))'
+style = "bold #737aa2"
+
+[git_metrics]
+added_style = "bold #c3e88d"
+deleted_style = "bold #c53b53"
+format = "([$added]($added_style) [-$deleted]($deleted_style))"
+disabled = false
+
+[java]
+format = '☕ [$version]($style)'
+
+[nodejs]
+format = '🟢 [$version]($style)'
+
+[package]
+format = '📦 [$version]($style)'
+
+[php]
+format = '🐘 [$version]($style)'
+
+[python]
+format = '[](#41a6b5) [${pyenv_prefix}(${version})(\($virtualenv\))](bold #41a6b5)'
+
+[rust]
+format = '🦀 [$symbol($version)]($style)'
+
+[sudo]
+format = '\[[as 🔒 $symbol]($style)\]'
+
+[time]
+format = '[$time]($style)'
+
+[username]
+format = '\[[$user]($style)\] '
