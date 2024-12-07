@@ -167,7 +167,8 @@ export FZF_DEFAULT_OPTS=$FZF_DEFAULT_OPTS'
 --color=fg:#c0caf5,bg:#12131A,hl:#bb9af7
 --color=fg+:#c0caf5,bg+:#1a1b26,hl+:#7dcfff
 --color=info:#7aa2f7,prompt:#7dcfff,pointer:#7dcfff 
---color=marker:#9ece6a,spinner:#9ece6a,header:#9ece6a'
+--color=marker:#9ece6a,spinner:#9ece6a,header:#9ece6a
+--color=border:#3B415C'
 show_file_or_dir_preview="if [ -d {} ]; then eza --tree --color=always {} | head -200; else batcat -n --color=always --line-range :500 {}; fi"
 export FZF_CTRL_T_OPTS="--preview '$show_file_or_dir_preview'"
 export FZF_ALT_C_OPTS='--preview "eza --tree --color=always {} | head -200"'
