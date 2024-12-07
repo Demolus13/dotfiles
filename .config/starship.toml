@@ -21,7 +21,6 @@ symbol = " "
 
 [directory]
 truncation_length = 3
-truncation_symbol = ".../"
 
 [aws]
 format = '\[🌩️ [$symbol($profile)(\($region\))(\[$duration\])]($style)\]'
