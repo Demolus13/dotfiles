@@ -163,8 +163,6 @@ help() {
 	"$@" --help 2>&1 | bathelp
 }
 
-export EZA_THEME="tokyonight"
-
 export FZF_DEFAULT_OPTS=$FZF_DEFAULT_OPTS' 
 --color=fg:#c0caf5,bg:#12131A,hl:#bb9af7
 --color=fg+:#c0caf5,bg+:#1a1b26,hl+:#7dcfff
