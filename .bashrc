@@ -143,18 +143,55 @@ source "$OSH"/oh-my-bash.sh
 # alias bashconfig="mate ~/.bashrc"
 # alias ohmybash="mate ~/.oh-my-bash"
 
-# ------------------------------
+# -----------------------------------------------------------
 # User specific environment
-# ------------------------------
+# -----------------------------------------------------------
 source /opt/ros/rolling/setup.bash
 
+## COMPRESSION FUNCTION ##
+compress() {
+    FILE=$1
+    shift
+    case $FILE in
+        *.tar.bz2) tar cjf $FILE $*  ;;
+        *.tar.gz)  tar czf $FILE $*  ;;
+        *.tgz)     tar czf $FILE $*  ;;
+        *.zip)     zip $FILE $*      ;;
+        *.rar)     rar $FILE $*      ;;
+        *)         echo "Filetype not recognized" ;;
+   esac
+}
+
+## EXTRACT FUNCTION ##
+extract () {
+    if [ -f $1 ] ; then
+        case $1 in
+            *.tar.bz2)   tar xjf $1     ;;
+            *.tar.gz)    tar xzf $1     ;;
+            *.bz2)       bunzip2 $1     ;;
+            *.rar)       unrar e $1     ;;
+            *.gz)        gunzip $1      ;;
+            *.tar)       tar xf $1      ;;
+            *.tbz2)      tar xjf $1     ;;
+            *.tgz)       tar xzf $1     ;;
+            *.zip)       unzip $1       ;;
+            *.Z)         uncompress $1  ;;
+            *.7z)        7z x $1        ;;
+            *)     echo "'$1' cannot be extracted via extract()" ;;
+        esac
+    else
+        echo "'$1' is not a valid file"
+    fi
+}
+
+## CREATE A NEW DIRECTORY AND ENTER IT ##
 [ -f ~/.fzf.bash ] && source ~/.fzf.bash
 eval "$(starship init bash)"
-
 export NVM_DIR="$HOME/.nvm"
 [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
 [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
 
+## ALIASES ##
 alias python=python3
 alias ls='eza --color=always --git --no-time --no-user'
 alias cat=batcat
@@ -163,6 +200,7 @@ help() {
 	"$@" --help 2>&1 | bathelp
 }
 
+## FZF SETTINGS ##
 export FZF_DEFAULT_OPTS=$FZF_DEFAULT_OPTS' 
 --color=fg:#c0caf5,bg:#12131A,hl:#bb9af7
 --color=fg+:#c0caf5,bg+:#1a1b26,hl+:#7dcfff
@@ -186,4 +224,5 @@ _fzf_comprun() {
   esac
 }
 
+## BAT SETTINGS ##
 export MANPAGER='sh -c "col -bx | batcat -l man -p"'
