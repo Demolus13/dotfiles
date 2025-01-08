@@ -70,7 +70,7 @@ format = '🐘 [$version]($style)'
 format = '[](#41a6b5) [${pyenv_prefix}(${version})(\($virtualenv\))](bold #41a6b5)'
 
 [rust]
-format = '🦀 [$symbol($version)]($style)'
+format = '🦀 [$version]($style)'
 
 [sudo]
 format = '\[[as 🔒 $symbol]($style)\]'

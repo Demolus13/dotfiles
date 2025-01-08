@@ -147,6 +147,7 @@ source "$OSH"/oh-my-bash.sh
 # User specific environment
 # -----------------------------------------------------------
 source /opt/ros/rolling/setup.bash
+. "$HOME/.cargo/env"
 
 ## COMPRESSION FUNCTION ##
 compress() {
