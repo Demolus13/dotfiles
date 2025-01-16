@@ -88,6 +88,7 @@ sudo apt install git curl
     ```sh
     mkdir -p "$(batcat --config-dir)/themes"
     echo '--theme="tokyonight_night"' >> "$(batcat --config-dir)/config"
+    cp ~/.dotfiles/.config/bat/themes/tokyonight_night.tmTheme ~/.config/bat/themes/tokyonight_night.tmTheme
     ```
 
 4. Build the bat cache:
@@ -108,6 +109,7 @@ sudo apt install git curl
 2. Copy the Tokyo Night theme:
 
     ```sh
+    mkdir ~/.config/eza
     sudo cp ~/.dotfiles/eza/theme.yml ~/.config/eza/theme.yml
     ```
 
