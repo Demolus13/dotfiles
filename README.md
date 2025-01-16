@@ -79,6 +79,7 @@ sudo apt install git curl
 2. Create a symbolic link to `batcat`:
 
     ```sh
+    mkdir -p ~/.local/bin
     ln -s /usr/bin/batcat ~/.local/bin/bat
     ```
 
