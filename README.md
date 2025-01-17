@@ -118,7 +118,7 @@ sudo apt install git curl
     sudo cp ~/.dotfiles/eza/theme.yml ~/.config/eza/theme.yml
     ```
 
-## Install Blesh
+### Install Blesh
 
 1. Run the installation script:
 
