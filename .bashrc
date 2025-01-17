@@ -146,7 +146,7 @@ source "$OSH"/oh-my-bash.sh
 # -----------------------------------------------------------
 # User specific environment
 # -----------------------------------------------------------
-source /opt/ros/rolling/setup.bash
+# source /opt/ros/rolling/setup.bash
 . "$HOME/.cargo/env"
 
 ## COMPRESSION FUNCTION ##
@@ -201,9 +201,12 @@ help() {
 	"$@" --help 2>&1 | bathelp
 }
 
+## BLESH SETTINGS ##
+source ~/.local/share/blesh/ble.sh
+
 ## FZF SETTINGS ##
 export FZF_DEFAULT_OPTS=$FZF_DEFAULT_OPTS' 
---color=fg:#c0caf5,bg:#12131A,hl:#bb9af7
+--color=fg:#c0caf5,bg:#0D1017,hl:#bb9af7
 --color=fg+:#c0caf5,bg+:#1a1b26,hl+:#7dcfff
 --color=info:#7aa2f7,prompt:#7dcfff,pointer:#7dcfff 
 --color=marker:#9ece6a,spinner:#9ece6a,header:#9ece6a
