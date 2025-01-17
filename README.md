@@ -113,3 +113,18 @@ sudo apt install git curl
     sudo cp ~/.dotfiles/eza/theme.yml ~/.config/eza/theme.yml
     ```
 
+## Install Blesh
+
+1. Run the installation script:
+
+    ```sh
+    sudo apt install git make gawk
+    git clone --recursive --depth 1 --shallow-submodules https://github.com/akinomyoga/ble.sh.git
+    make -C ble.sh install PREFIX=~/.local
+    ```
+
+2. Copy `.blerc` to your home directory:
+
+    ```sh
+    cp ~/.dotfiles/.blerc ~/.blerc
+    ```
