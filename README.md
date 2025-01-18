@@ -6,7 +6,7 @@ Ensure you have `git` and `curl` installed:
 
 ```sh
 sudo apt update
-sudo apt install git curl
+sudo apt install git curl gpg make gawk
 ```
 
 ### Install Oh-My-Bash
@@ -102,8 +102,7 @@ sudo apt install git curl
 1. Run the installation script:
 
     ```sh
-    sudo apt install -y gpg
-
+    sudo mkdir -p /etc/apt/keyrings/
     wget -qO- https://raw.githubusercontent.com/eza-community/eza/main/deb.asc | sudo gpg --dearmor -o /etc/apt/keyrings/gierens.gpg
     echo "deb [signed-by=/etc/apt/keyrings/gierens.gpg] http://deb.gierens.de stable main" | sudo tee /etc/apt/sources.list.d/gierens.list
     sudo chmod 644 /etc/apt/keyrings/gierens.gpg /etc/apt/sources.list.d/gierens.list
@@ -123,7 +122,6 @@ sudo apt install git curl
 1. Run the installation script:
 
     ```sh
-    sudo apt install git make gawk
     git clone --recursive --depth 1 --shallow-submodules https://github.com/akinomyoga/ble.sh.git
     make -C ble.sh install PREFIX=~/.local
     ```
