@@ -1,3 +1,4 @@
-ble-face auto_complete='fg=242,bg=235'
-ble-face auto_complete='fg=white,bg=69'
 ble-face auto_complete='fg=240,italic'
+
+ble-bind -f up 'history-search-backward hide-status:immediate-accept'
+ble-bind -f down 'history-search-forward hide-status:immediate-accept'
