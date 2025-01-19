@@ -20,6 +20,16 @@
     rm -rf ~/.dotfiles/Evolve-v1.6.1BLD163-PublicRelease
     ```
 
+3.  Install JetBrainsMono Nerd Font:
+
+    ```sh
+    wget -P ~/.local/share/fonts https://github.com/ryanoasis/nerd-fonts/releases/download/v3.0.2/JetBrainsMono.zip \
+    && cd ~/.local/share/fonts \
+    && unzip JetBrainsMono.zip \
+    && rm JetBrainsMono.zip \
+    && fc-cache -fv
+    ```
+
 ### Install Oh-My-Bash
 
 1. Run the installation script:

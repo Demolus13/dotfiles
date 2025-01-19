@@ -7,6 +7,13 @@ sudo add-apt-repository universe
 sudo apt install gnome-tweaks
 sudo apt install gnome-shell-extensions-manager
 
+# Install JetBrainsMono Nerd Font
+wget -P ~/.local/share/fonts https://github.com/ryanoasis/nerd-fonts/releases/download/v3.0.2/JetBrainsMono.zip \
+    && cd ~/.local/share/fonts \
+    && unzip JetBrainsMono.zip \
+    && rm JetBrainsMono.zip \
+    && fc-cache -fv
+
 # Install Evolve GTK Theme Manager
 unzip ~/.dotfiles/Evolve-v1.6.1BLD163-PublicRelease.zip -d ~/.dotfiles
 ~/.dotfiles/Evolve-v1.6.1BLD163-PublicRelease/install.sh
