@@ -1,5 +1,10 @@
 #!/bin/bash
 
+# Check if .dotfiles directory exists, else clone it
+if [ ! -d "$HOME/.dotfiles" ]; then
+    git clone https://github.com/Demolus13/Ubuntu-24.04.git ~/.dotfiles
+fi
+
 # Prerequisites
 sudo apt update
 sudo apt install git curl gpg make gawk
@@ -7,17 +12,17 @@ sudo add-apt-repository universe
 sudo apt install gnome-tweaks
 sudo apt install gnome-shell-extensions-manager
 
+# Install Evolve GTK Theme Manager
+unzip ~/.dotfiles/Evolve-v1.6.1BLD163-PublicRelease.zip -d ~/.dotfiles
+~/.dotfiles/Evolve-v1.6.1BLD163-PublicRelease/install.sh
+rm -rf ~/.dotfiles/Evolve-v1.6.1BLD163-PublicRelease
+
 # Install JetBrainsMono Nerd Font
 wget -P ~/.local/share/fonts https://github.com/ryanoasis/nerd-fonts/releases/download/v3.0.2/JetBrainsMono.zip \
     && cd ~/.local/share/fonts \
     && unzip JetBrainsMono.zip \
     && rm JetBrainsMono.zip \
     && fc-cache -fv
-
-# Install Evolve GTK Theme Manager
-unzip ~/.dotfiles/Evolve-v1.6.1BLD163-PublicRelease.zip -d ~/.dotfiles
-~/.dotfiles/Evolve-v1.6.1BLD163-PublicRelease/install.sh
-rm -rf ~/.dotfiles/Evolve-v1.6.1BLD163-PublicRelease
 
 # Install Oh-My-Bash
 bash -c "$(curl -fsSL https://raw.githubusercontent.com/ohmybash/oh-my-bash/master/tools/install.sh)"
