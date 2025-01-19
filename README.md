@@ -2,12 +2,23 @@
 
 ### Prerequisites
 
-Ensure you have `git` and `curl` installed:
+1. Ensure you have `git`, `curl`, `gpg`, `make` and `gawk` installed:
 
-```sh
-sudo apt update
-sudo apt install git curl gpg make gawk
-```
+    ```sh
+    sudo apt update
+    sudo apt install git curl gpg make gawk
+    sudo add-apt-repository universe
+    sudo apt install gnome-tweaks
+    sudo apt install gnome-shell-extensions-manager
+    ```
+
+2. Install Evolve GTK Theme Manager:
+
+    ```sh
+    unzip ~/.dotfiles/Evolve-v1.6.1BLD163-PublicRelease.zip -d ~/.dotfiles
+    ~/.dotfiles/Evolve-v1.6.1BLD163-PublicRelease/install.sh
+    rm -rf ~/.dotfiles/Evolve-v1.6.1BLD163-PublicRelease
+    ```
 
 ### Install Oh-My-Bash
 
@@ -131,4 +142,32 @@ sudo apt install git curl gpg make gawk
 
     ```sh
     cp ~/.dotfiles/.blerc ~/.blerc
+    ```
+
+### Install Tokyonight Theme
+
+1. Extract the theme:
+
+    ```sh
+    mkdir -p ~/.themes
+    unzip ~/.dotfiles/Tokyonight-Dark-BL-MB.zip -d ~/.themes
+    ```
+
+### Install WhiteSur Icon Theme
+
+1. Extract the theme:
+
+    ```sh
+    git clone https://github.com/vinceliuice/WhiteSur-icon-theme.git ~/.dotfiles
+    ~/.dotfiles/WhiteSur-icon-theme/install.sh
+    rm -rf ~/.dotfiles/WhiteSur-icon-theme
+    ```
+
+### Install Bibata Cursor Theme
+
+1. Extract the theme:
+
+    ```sh
+    mkdir -p ~/.icons
+    tar -xvf ~/.dotfiles/Bibata_Modern-Classic.tar.xz -C ~/.icons
     ```
