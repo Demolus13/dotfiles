@@ -36,6 +36,7 @@ sudo apt install git curl gpg make gawk
 
     ```sh
     cp ~/.dotfiles/.config/starship.toml ~/.config/starship.toml
+    sudo mkdir -p /root/.config/
     sudo cp ~/.config/starship.toml /root/.config/
     ```
 
