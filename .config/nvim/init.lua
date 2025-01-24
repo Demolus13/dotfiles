@@ -4,6 +4,9 @@ vim.cmd("set tabstop=2")
 vim.cmd("set softtabstop=2")
 vim.cmd("set shiftwidth=2")
 
+-- Enable absolute line numbers
+vim.opt.number = true
+
 -- Set leader key
 vim.g.mapleader = " "
 

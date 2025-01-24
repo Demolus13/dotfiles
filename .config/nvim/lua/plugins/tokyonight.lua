@@ -12,8 +12,8 @@ return {
       vim.cmd([[colorscheme tokyonight]])
       
       -- Set the background color
-      vim.api.nvim_set_hl(0, "Normal", { bg = "#0D1017" })
-      vim.api.nvim_set_hl(0, "NormalFloat", { bg = "#0D1017" })
+      -- vim.api.nvim_set_hl(0, "Normal", { bg = "#0D1017" })
+      -- vim.api.nvim_set_hl(0, "NormalFloat", { bg = "#0D1017" })
     end,
   },
 }
