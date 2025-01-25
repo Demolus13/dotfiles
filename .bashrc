@@ -158,8 +158,8 @@ compress() {
         *.tar.bz2) tar cjf $FILE $*  ;;
         *.tar.gz)  tar czf $FILE $*  ;;
         *.tgz)     tar czf $FILE $*  ;;
-        *.zip)     zip $FILE $*      ;;
-        *.rar)     rar $FILE $*      ;;
+        *.zip)     zip -r $FILE $*      ;;
+        *.rar)     rar a $FILE $*      ;;
         *)         echo "Filetype not recognized" ;;
    esac
 }

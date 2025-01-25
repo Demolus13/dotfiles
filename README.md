@@ -177,6 +177,22 @@
     cp ~/.dotfiles/.blerc ~/.blerc
     ```
 
+### Install Neovim
+
+1. Run the installation script:
+
+    ```sh
+    curl -LO https://github.com/neovim/neovim/releases/latest/download/nvim-linux64.tar.gz
+    sudo rm -rf /opt/nvim
+    sudo tar -C /opt -xzf nvim-linux64.tar.gz
+    ```
+
+2. Copy `nvim` to your home directory:
+
+    ```sh
+    cp ~/.dorfiles/.config/nvim ~/.config
+    ```
+
 ### Install Tokyonight Theme
 
 1. Extract the theme:
