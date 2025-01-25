@@ -1,6 +1,7 @@
 return {
 	"numToStr/Comment.nvim",
-	config = function()
+	event = { "BufReadPre", "BufNewFile" },
+  config = function()
 		require("Comment").setup({
 			padding = true, -- Optional: Add padding around the comment
 			sticky = true, -- Optional: Keep comments aligned

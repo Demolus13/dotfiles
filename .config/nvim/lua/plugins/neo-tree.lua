@@ -23,7 +23,6 @@ return {
     -- vim.cmd([[highlight NeoTreeNormal guibg=#0D1017]])
 
     -- Keybinding
-    -- vim.keymap.set('n', '<C-n>', ':Neotree filesystem reveal left<CR>', { noremap = true, silent = true })
     vim.keymap.set('n', '<C-n>', '<Cmd>Neotree toggle<CR>')
   end,
 }
