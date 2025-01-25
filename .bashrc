@@ -148,6 +148,7 @@ source "$OSH"/oh-my-bash.sh
 # -----------------------------------------------------------
 # source /opt/ros/rolling/setup.bash
 . "$HOME/.cargo/env"
+export PATH="$PATH:/opt/nvim-linux64/bin"
 
 ## COMPRESSION FUNCTION ##
 compress() {
