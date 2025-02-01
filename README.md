@@ -16,7 +16,9 @@
 
     ```sh
     unzip ~/.dotfiles/Evolve-v1.6.1BLD163-PublicRelease.zip -d ~/.dotfiles
-    ~/.dotfiles/Evolve-v1.6.1BLD163-PublicRelease/install.sh
+    cd ~/.dotfiles/Evolve-v1.6.1BLD163-PublicRelease/
+    ./install.sh
+    cd
     rm -rf ~/.dotfiles/Evolve-v1.6.1BLD163-PublicRelease
     ```
 
@@ -28,6 +30,7 @@
     && unzip JetBrainsMono.zip \
     && rm JetBrainsMono.zip \
     && fc-cache -fv
+    cd
     ```
 
 ### Install Ghostty Terminal:
@@ -190,7 +193,7 @@
 2. Copy `nvim` to your home directory:
 
     ```sh
-    cp ~/.dorfiles/.config/nvim ~/.config
+    cp ~/.dotfiles/.config/nvim -r ~/.config
     ```
 
 ### Install Tokyonight Theme
