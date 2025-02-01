@@ -14,7 +14,9 @@ sudo apt install gnome-shell-extensions-manager
 
 # Install Evolve GTK Theme Manager
 unzip ~/.dotfiles/Evolve-v1.6.1BLD163-PublicRelease.zip -d ~/.dotfiles
-~/.dotfiles/Evolve-v1.6.1BLD163-PublicRelease/install.sh
+cd ~/.dotfiles/Evolve-v1.6.1BLD163-PublicRelease/
+./install.sh
+cd
 rm -rf ~/.dotfiles/Evolve-v1.6.1BLD163-PublicRelease
 
 # Install JetBrainsMono Nerd Font
@@ -23,6 +25,20 @@ wget -P ~/.local/share/fonts https://github.com/ryanoasis/nerd-fonts/releases/do
     && unzip JetBrainsMono.zip \
     && rm JetBrainsMono.zip \
     && fc-cache -fv
+cd
+
+# Install Ghostty Terminal
+source /etc/os-release
+GHOSTTY_DEB_URL=$(
+curl -s https://api.github.com/repos/mkasberg/ghostty-ubuntu/releases/latest | \
+grep -oP "https://github.com/mkasberg/ghostty-ubuntu/releases/download/[^\s/]+/ghostty_[^\s/_]+_amd64_${VERSION_ID}.deb"
+)
+GHOSTTY_DEB_FILE=$(basename "$GHOSTTY_DEB_URL")
+curl -LO "$GHOSTTY_DEB_URL"
+sudo dpkg -i "$GHOSTTY_DEB_FILE"
+rm "$GHOSTTY_DEB_FILE"
+mkdir -p ~/.config/ghostty
+cp ~/.dotfiles/.config/ghostty/config ~/.config/ghostty/config
 
 # Install Oh-My-Bash
 bash -c "$(curl -fsSL https://raw.githubusercontent.com/ohmybash/oh-my-bash/master/tools/install.sh)"
