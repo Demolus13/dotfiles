@@ -5,6 +5,13 @@ return {
   opts = {
     options = {
       mode = "tabs",
+      offsets = {
+        {
+          filetype = "neo-tree",
+          text = "File Explorer",
+          text_align = "center",
+        }
+      }
     },
   },
 }

@@ -8,7 +8,7 @@ return {
         theme = "tokyonight", -- Set the theme for the statusline (you can change it)
         section_separators = { left = "", right = "" },
         component_separators = { left = "", right = "" },
-        disabled_filetypes = { "NvimTree", "packer" }, -- Disable lualine in specific filetypes
+        disabled_filetypes = { "neo-tree", "packer" }, -- Disable lualine in specific filetypes
       },
       sections = {
         lualine_a = { "mode" },
@@ -18,7 +18,7 @@ return {
         lualine_y = { "progress" },
         lualine_z = { "time" },
       },
-      extensions = { "fugitive", "nvim-tree" }, -- Optional: Add extra extensions like fugitive, nvim-tree
+      extensions = { "fugitive", "nvim-tree", "neo-tree" }, -- Optional: Add extra extensions like fugitive, nvim-tree
     })
   end,
 }
