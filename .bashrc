@@ -146,7 +146,7 @@ source "$OSH"/oh-my-bash.sh
 # -----------------------------------------------------------
 # User specific environment
 # -----------------------------------------------------------
-# source /opt/ros/rolling/setup.bash
+source /opt/ros/jazzy/setup.bash
 . "$HOME/.cargo/env"
 export PATH="$PATH:/opt/nvim-linux64/bin"
 
@@ -158,8 +158,8 @@ compress() {
         *.tar.bz2) tar cjf $FILE $*  ;;
         *.tar.gz)  tar czf $FILE $*  ;;
         *.tgz)     tar czf $FILE $*  ;;
-        *.zip)     zip -r $FILE $*      ;;
-        *.rar)     rar a $FILE $*      ;;
+        *.zip)     zip $FILE $*      ;;
+        *.rar)     rar $FILE $*      ;;
         *)         echo "Filetype not recognized" ;;
    esac
 }
@@ -189,9 +189,10 @@ extract () {
 ## CREATE A NEW DIRECTORY AND ENTER IT ##
 [ -f ~/.fzf.bash ] && source ~/.fzf.bash
 eval "$(starship init bash)"
+# eval "$(oh-my-posh init bash --config $HOME/.config/ohmyposh/config.toml)"
 export NVM_DIR="$HOME/.nvm"
-[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
-[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
+[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"
+[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"
 
 ## ALIASES ##
 alias python=python3
