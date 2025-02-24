@@ -19,6 +19,7 @@ return {
 			"onsails/lspkind.nvim",
 			"windwp/nvim-ts-autotag",
 			"windwp/nvim-autopairs",
+      "zbirenbaum/copilot-cmp",
 		},
 		config = function()
 			local cmp_autopairs = require("nvim-autopairs.completion.cmp")
@@ -33,6 +34,9 @@ return {
 
 			-- Load snippets
 			require("luasnip.loaders.from_vscode").lazy_load()
+
+			-- Setup Copilot CMP
+			require("copilot_cmp").setup()
 
 			cmp.setup({
 				snippet = {
@@ -71,6 +75,7 @@ return {
 				-- sources for autocompletion
 				sources = cmp.config.sources({
 					{ name = "nvim_lsp", group_index = 1 }, -- lsp
+          { name = "copilot", group_index = 2 }, -- GitHub Copilot suggestion
 					{ name = "buffer", max_item_count = 5, group_index = 2 }, -- text within current buffer
 					{ name = "path", max_item_count = 3, group_index = 3 }, -- file system paths
 					{ name = "luasnip", max_item_count = 3, group_index = 5 }, -- snippets
@@ -87,10 +92,12 @@ return {
 							ellipsis_char = "...",
 							menu = {
 								nvim_lsp = "[LSP]",
+                copilot = "[Copilot]",
 								buffer = "[Buffer]",
 								path = "[PATH]",
 								luasnip = "[LuaSnip]",
 							},
+              symbol_map = { Copilot = "" },
 						})(entry, item)
 						if color_item.abbr_hl_group then
 							item.kind_hl_group = color_item.abbr_hl_group

@@ -16,6 +16,18 @@ return {
 						"--smart-case",
 					},
 					path_display = { "truncate" },
+          file_ignore_patterns = {
+            "%.git/",
+            "node_modules/",
+            "%.lock$",
+            "__pycache__/",
+            ".cache/",
+            "%.o", "%.a", "%.out", "%.class", "%.pyc", "%.pyo", "%.exe", "%.dll",
+            "build/", "dist/", "target/",
+            "log/", "logs/", "%.log",
+            ".ipynb_checkpoints/", "%.ipynb",
+            "%.jpg", "%.jpeg", "%.png", "%.gif",
+          },
 				},
 				pickers = {
 					find_files = {

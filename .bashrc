@@ -147,6 +147,7 @@ source "$OSH"/oh-my-bash.sh
 # User specific environment
 # -----------------------------------------------------------
 source /opt/ros/jazzy/setup.bash
+# source ~/ws_moveit/install/setup.bash
 . "$HOME/.cargo/env"
 export PATH="$PATH:/opt/nvim-linux64/bin"
 

@@ -8,7 +8,7 @@ return {
         theme = "tokyonight", -- Set the theme for the statusline (you can change it)
         section_separators = { left = "", right = "" },
         component_separators = { left = "", right = "" },
-        disabled_filetypes = { "neo-tree", "packer" }, -- Disable lualine in specific filetypes
+        disabled_filetypes = { "neo-tree", "packer", "Outline" }, -- Disable lualine in specific filetypes
       },
       sections = {
         lualine_a = { "mode" },
