@@ -207,6 +207,9 @@ help() {
 ## BLESH SETTINGS ##
 source ~/.local/share/blesh/ble.sh
 blehook/eval-after-load complete 'unset -f ble/cmdinfo/complete:cd'
+bleopt prompt_ps1_transient='always:trim'
+bleopt prompt_ps1_final=$'\\n$(starship module character)'
+bleopt prompt_rps1_final='$(starship module time)'
 ble/function#advice around __fzf_generic_path_completion _fzf_complete.advice
 ble/function#advice around _fzf_complete                 _fzf_complete.advice
 ble/function#advice around _fzf_complete_kill            _fzf_complete.advice

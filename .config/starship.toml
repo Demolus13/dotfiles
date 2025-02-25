@@ -6,6 +6,7 @@ $git_status\
 $git_metrics\
 $fill\
 $nodejs\
+$c\
 $java\
 $python\
 $php\
@@ -36,35 +37,36 @@ format = "([+$added]($added_style) [-$deleted]($deleted_style))"
 disabled = false
 
 [c]
-format = '[]($style) [$version(-$name)]($style)'
+detect_extensions = ['c', 'h', 'cpp', 'hpp']
+format = '[](#737aa2) [$version(-$name)](bold #737aa2) '
 
 [java]
-format = '[]($style) [$version]($style)'
+format = '[]($style) [$version]($style) '
 
 [nodejs]
-format = '[]($style) [$version]($style)'
+format = '[]($style) [$version]($style) '
 
 [package]
-format = '[󰏗]($style) [$version]($style)'
+format = '[󰏗]($style) [$version]($style) '
 
 [php]
-format = '[ ]($style) [$version]($style)'
+format = '[ ]($style) [$version]($style) '
 
 [python]
-format = '[](#41a6b5) [${pyenv_prefix}(${version})(\($virtualenv\))](bold #41a6b5)'
+format = '[](#41a6b5) [${pyenv_prefix}(${version})(\($virtualenv\))](bold #41a6b5) '
 
 [rust]
-format = '[](#ff9e64) [$version](bold #ff9e64)'
+format = '[](#ff9e64) [$version](bold #ff9e64) '
 
 [jobs]
 symbol = ' '
 style = 'bold #4f76c7'
 number_threshold = 1
-format = '[$number$symbol ]($style)'
+format = '[$number$symbol]($style) '
 
 [cmd_duration]
 min_time = 500
-style = 'bold #737aa2'
+style = 'bold #9d7cd8'
 format = '[$duration]($style)'
 
 [username]
