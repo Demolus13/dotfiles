@@ -1,6 +1,4 @@
 format = """
-$username\
-$hostname\
 $directory\
 $git_branch\
 $git_state\
@@ -23,9 +21,6 @@ symbol = " "
 [directory]
 truncation_length = 3
 
-[c]
-format = '\[📄 [$symbol($version(-$name))]($style)\]'
-
 [git_branch]
 format = '[]($style) [$branch ]($style)'
 style = "bold #737aa2" 
@@ -37,32 +32,35 @@ style = "bold #737aa2"
 [git_metrics]
 added_style = "bold #c3e88d"
 deleted_style = "bold #c53b53"
-format = "([$added]($added_style) [-$deleted]($deleted_style))"
+format = "([+$added]($added_style) [-$deleted]($deleted_style))"
 disabled = false
 
+[c]
+format = '[]($style) [$version(-$name)]($style)'
+
 [java]
-format = '☕ [$version]($style)'
+format = '[]($style) [$version]($style)'
 
 [nodejs]
-format = '🟢 [$version]($style)'
+format = '[]($style) [$version]($style)'
 
 [package]
-format = '📦 [$version]($style)'
+format = '[󰏗]($style) [$version]($style)'
 
 [php]
-format = '🐘 [$version]($style)'
+format = '[ ]($style) [$version]($style)'
 
 [python]
 format = '[](#41a6b5) [${pyenv_prefix}(${version})(\($virtualenv\))](bold #41a6b5)'
 
 [rust]
-format = '🦀 [$version]($style)'
+format = '[](#ff9e64) [$version](bold #ff9e64)'
 
 [jobs]
 symbol = ' '
 style = 'bold #4f76c7'
 number_threshold = 1
-format = '[$symbol]($style)'
+format = '[$number$symbol ]($style)'
 
 [cmd_duration]
 min_time = 500
