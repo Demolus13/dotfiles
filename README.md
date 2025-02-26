@@ -221,5 +221,5 @@
 
     ```sh
     mkdir -p ~/.icons
-    tar -xvf ~/.dotfiles/Bibata_Modern-Classic.tar.xz -C ~/.icons
+    tar -xvf ~/.dotfiles/Bibata-Modern-Classic.tar.xz -C ~/.icons
     ```
