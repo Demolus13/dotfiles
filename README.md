@@ -9,7 +9,7 @@
     sudo apt install git curl gpg make gawk
     sudo add-apt-repository universe
     sudo apt install gnome-tweaks
-    sudo apt install gnome-shell-extensions-manager
+    sudo apt install gnome-shell-extension-manager
     ```
 
 2. Install Evolve GTK Theme Manager:
@@ -185,7 +185,7 @@
 1. Run the installation script:
 
     ```sh
-    curl -LO https://github.com/neovim/neovim/releases/latest/download/nvim-linux64.tar.gz
+    curl -LO https://github.com/neovim/neovim/releases/download/v0.10.0/nvim-linux64.tar.gz
     sudo rm -rf /opt/nvim
     sudo tar -C /opt -xzf nvim-linux64.tar.gz
     ```
@@ -210,7 +210,7 @@
 1. Extract the theme:
 
     ```sh
-    git clone https://github.com/vinceliuice/WhiteSur-icon-theme.git ~/.dotfiles
+    git clone https://github.com/vinceliuice/WhiteSur-icon-theme.git ~/.dotfiles/WhiteSur-icon-theme
     ~/.dotfiles/WhiteSur-icon-theme/install.sh
     rm -rf ~/.dotfiles/WhiteSur-icon-theme
     ```
@@ -221,5 +221,5 @@
 
     ```sh
     mkdir -p ~/.icons
-    tar -xvf ~/.dotfiles/Bibata_Modern-Classic.tar.xz -C ~/.icons
+    tar -xvf ~/.dotfiles/Bibata-Modern-Classic.tar.xz -C ~/.icons
     ```
