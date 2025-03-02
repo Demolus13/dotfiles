@@ -242,6 +242,16 @@ _fzf_git_each_ref() {
     --preview 'git log --oneline --graph --date=short --color=always --pretty="format:%C(auto)%cd %h%d %s" {2}' "$@" |
   awk '{print $2}'
 }
+
+_fzf_git_diff() {
+  _fzf_git_check || return "$?"
+  git diff --name-only |
+  ble/contrib/integration:fzf-git/fzf --ansi \
+    --border-label '  Diff Files' \
+    --header $'CTRL-E (open in editor)\n\n' \
+    --bind "alt-e:execute:${EDITOR:-vim} {} > /dev/tty" \
+    --preview "git diff --no-ext-diff --color=always {}" "$@"
+}
 #------------------------------------------------------------------------------
 
 # export FZF_DEFAULT_OPTS=--no-unicode
@@ -316,6 +326,7 @@ function ble/contrib:integration/fzf-git/initialize {
     ble/contrib:integration/fzf-git/type:"$type" s stashes
     ble/contrib:integration/fzf-git/type:"$type" l lreflogs
     ble/contrib:integration/fzf-git/type:"$type" e each_ref
+    ble/contrib:integration/fzf-git/type:"$type" d diff
   done
   builtin unset -f "$FUNCNAME"
 }
