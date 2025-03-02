@@ -142,7 +142,7 @@
 4. Build the bat cache:
 
     ```sh
-    bat cache --build
+    batcat cache --build
     ```
 
 ### Install Eza

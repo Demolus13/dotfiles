@@ -10,7 +10,7 @@ sudo apt update
 sudo apt install git curl gpg make gawk
 sudo add-apt-repository universe
 sudo apt install gnome-tweaks
-sudo apt install gnome-shell-extensions-manager
+sudo apt install gnome-shell-extension-manager
 
 # Install Evolve GTK Theme Manager
 unzip ~/.dotfiles/Evolve-v1.6.1BLD163-PublicRelease.zip -d ~/.dotfiles
@@ -67,7 +67,7 @@ ln -s /usr/bin/batcat ~/.local/bin/bat
 mkdir -p "$(batcat --config-dir)/themes"
 echo '--theme="tokyonight_night"' >> "$(batcat --config-dir)/config"
 cp ~/.dotfiles/.config/bat/themes/tokyonight_night.tmTheme ~/.config/bat/themes/tokyonight_night.tmTheme
-bat cache --build
+batcat cache --build
 
 # Install Eza
 sudo mkdir -p /etc/apt/keyrings/
@@ -84,12 +84,19 @@ git clone --recursive --depth 1 --shallow-submodules https://github.com/akinomyo
 make -C ble.sh install PREFIX=~/.local
 cp ~/.dotfiles/.blerc ~/.blerc
 
+# Install Neovim
+curl -LO https://github.com/neovim/neovim/releases/download/v0.10.0/nvim-linux64.tar.gz
+sudo rm -rf /opt/nvim
+sudo tar -C /opt -xzf nvim-linux64.tar.gz
+cp ~/.dotfiles/.config/nvim -r ~/.config
+rm -rf nvim-linux64.tar.gz
+
 # Install Tokyonight Theme
 mkdir -p ~/.themes
 unzip ~/.dotfiles/Tokyonight-Dark-BL-MB.zip -d ~/.themes
 
 # Install WhiteSur Icon Theme
-git clone https://github.com/vinceliuice/WhiteSur-icon-theme.git ~/.dotfiles
+git clone https://github.com/vinceliuice/WhiteSur-icon-theme.git ~/.dotfiles/Whitesur-icon-theme
 ~/.dotfiles/WhiteSur-icon-theme/install.sh
 rm -rf ~/.dotfiles/WhiteSur-icon-theme
 
