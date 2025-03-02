@@ -206,23 +206,9 @@ help() {
 
 ## BLESH SETTINGS ##
 source ~/.local/share/blesh/ble.sh
-blehook/eval-after-load complete 'unset -f ble/cmdinfo/complete:cd'
 bleopt prompt_ps1_transient='always:trim'
 bleopt prompt_ps1_final=$'\\n$(starship module character)'
 bleopt prompt_rps1_final='$(starship module time)'
-ble/function#advice around __fzf_generic_path_completion _fzf_complete.advice
-ble/function#advice around _fzf_complete                 _fzf_complete.advice
-ble/function#advice around _fzf_complete_kill            _fzf_complete.advice
-function _fzf_complete.advice {
-  [[ :$comp_type: == *:auto:* ]] && { compopt -o default; return; }
-  compopt -o noquote
-  COMP_WORDS=("${comp_words[@]}") COMP_CWORD=$comp_cword
-  COMP_LINE=$comp_line COMP_POINT=$comp_point
-  ble/function#push printf '[[ $1 == "\e[5n" ]] || builtin printf "$@"'
-  ble/function#advice/do < /dev/tty &> /dev/tty
-  ble/function#pop printf
-  ble/textarea#invalidate
-}
 
 ## FZF SETTINGS ##
 export FZF_DEFAULT_OPTS=$FZF_DEFAULT_OPTS' 
