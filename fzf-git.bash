@@ -230,7 +230,7 @@ _fzf_git_each_ref() {
   bash "$__fzf_git" refs | ble/contrib/integration:fzf-git/fzf --ansi \
     --nth 2,2.. \
     --tiebreak begin \
-    --border-label '☘️  Each ref' \
+    --border-label ' 󰊢 Each Reference' \
     --header-lines 2 \
     --preview-window down,border-top,40% \
     --color hl:underline,hl+:underline \
