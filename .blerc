@@ -2,3 +2,8 @@ ble-face auto_complete='fg=240,italic'
 
 ble-bind -f up 'history-search-backward hide-status:immediate-accept'
 ble-bind -f down 'history-search-forward hide-status:immediate-accept'
+
+ble-import -d integration/fzf-completion
+ble-import -d integration/fzf-key-bindings
+_ble_contrib_fzf_git_config=key-binding:sabbrev:arpeggio
+ble-import -d integration/fzf-git
