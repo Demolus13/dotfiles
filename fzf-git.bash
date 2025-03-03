@@ -151,8 +151,9 @@ _fzf_git_files() {
     --header $'CTRL-O (open in browser) ╱ ALT-E (open in editor)\n\n' \
     --bind "ctrl-o:execute-silent:bash $__fzf_git file {-1}" \
     --bind "alt-e:execute:${EDITOR:-vim} {-1} > /dev/tty" \
-    --preview "git diff --no-ext-diff --color=always -- {-1} | sed 1,4d; $_fzf_git_cat {-1}" "$@" |
-  cut -c4- | sed 's/.* -> //'
+    --preview "$_fzf_git_cat --file-name 'Diff: {-1}' --diff {-1} && $_fzf_git_cat {-1}" "$@" 
+    # --preview "git diff --no-ext-diff --color=always -- {-1} | sed 1,4d; $_fzf_git_cat {-1}" "$@" |
+  # cut -c4- | sed 's/.* -> //'
 }
 
 _fzf_git_branches() {
@@ -243,15 +244,6 @@ _fzf_git_each_ref() {
   awk '{print $2}'
 }
 
-_fzf_git_diff() {
-  _fzf_git_check || return "$?"
-  git diff --name-only |
-  ble/contrib/integration:fzf-git/fzf --ansi \
-    --border-label '  Diff Files' \
-    --header $'CTRL-E (open in editor)\n\n' \
-    --bind "alt-e:execute:${EDITOR:-vim} {} > /dev/tty" \
-    --preview "git diff --no-ext-diff --color=always {}" "$@"
-}
 #------------------------------------------------------------------------------
 
 # export FZF_DEFAULT_OPTS=--no-unicode
@@ -326,7 +318,6 @@ function ble/contrib:integration/fzf-git/initialize {
     ble/contrib:integration/fzf-git/type:"$type" s stashes
     ble/contrib:integration/fzf-git/type:"$type" l lreflogs
     ble/contrib:integration/fzf-git/type:"$type" e each_ref
-    ble/contrib:integration/fzf-git/type:"$type" d diff
   done
   builtin unset -f "$FUNCNAME"
 }
