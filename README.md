@@ -1,4 +1,4 @@
-# Ubuntu-24.04
+# Dotfiles
 
 ### Prerequisites
 
