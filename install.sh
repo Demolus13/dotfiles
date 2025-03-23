@@ -2,7 +2,7 @@
 
 # Check if .dotfiles directory exists, else clone it
 if [ ! -d "$HOME/.dotfiles" ]; then
-    git clone https://github.com/Demolus13/Ubuntu-24.04.git ~/.dotfiles
+    git clone https://github.com/Demolus13/dotfiles.git ~/.dotfiles
 fi
 
 # Prerequisites
